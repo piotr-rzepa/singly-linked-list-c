@@ -1,4 +1,5 @@
-
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
 struct Node
 {
   int id;
@@ -24,41 +25,43 @@ enum Arithmetic
 * Konstruktory
 */
 linkedList *createList();
-linkedList *createListFromArray(const int *const arr, const int size);
-linkedList *createListFromList(linkedList *const list);
+linkedList *createListFromArray(const int *const, const int);
+linkedList *createListFromList(linkedList *const);
 linkedList *createRandomList();
-int *createArrayFromList(linkedList *list);
+int *createArrayFromList(linkedList *);
 
 /*
 * Dodawanie elementów do listy
 */
-void addNode(linkedList *const list, const int value);
-void addNodeAfter(linkedList *const list, const int id, const int value);
-void addNodeBefore(linkedList *const list, const int id, const int value);
+void addNode(linkedList *const, const int);
+void addNodeAfter(linkedList *const, const int, const int);
+void addNodeBefore(linkedList *const, const int, const int);
 
 /*
 * Szukanie elementów w liście
 */
-int searchById(linkedList *const list, const int id);
-int searchByValue(linkedList *const list, const int value);
+int searchById(linkedList *const, const int);
+int searchByValue(linkedList *const, const int);
 
 /*
 * Operacje na liście/listach
 */
-int listSum(linkedList *const list);
-int listSize(linkedList *const list);
-linkedList *arithmeticLists(linkedList *const l1, linkedList *const l2, enum Arithmetic ar);
-linkedList *mergeLists(linkedList *const l1, linkedList *const l2);
+int listSum(linkedList *const);
+int listSize(linkedList *const);
+linkedList *arithmeticLists(linkedList *const, linkedList *const, enum Arithmetic);
+linkedList *mergeLists(linkedList *const, linkedList *const);
 
 /*
 * Usuwanie elementów z listy
 */
-void deleteList(linkedList *list);
-void deleteNodeById(linkedList *const list, const int id);
-void deleteNodeByValue(linkedList *const list, const int value);
+void deleteList(linkedList *);
+void deleteNodeById(linkedList *const, const int);
+void deleteNodeByValue(linkedList *const, const int);
 
 /*
 * Wyświetlanie elementów listy, utilities
 */
-void printList(linkedList *const list);
-void errorHandler(const char *error);
+void printList(linkedList *const);
+void errorHandler(const char *);
+
+#endif

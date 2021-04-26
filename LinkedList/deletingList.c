@@ -15,6 +15,8 @@ void deleteList(linkedList *list)
   }
   list->head = NULL;
   list->size = 0;
+  free(list);
+  list = NULL;
 }
 
 void deleteNodeById(linkedList *list, const int id)
